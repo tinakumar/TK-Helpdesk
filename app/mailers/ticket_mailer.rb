@@ -7,9 +7,8 @@ class TicketMailer < ActionMailer::Base
   #   en.ticket_mailer.issue_confirmation.subject
   #
 
-   def issue_confirmation
-    @greeting = "Hi"
+  def issue_confirmation(ticket)
     mail to: ticket.email, subject: "We've Received your issue."
   end
 end
-end
+
