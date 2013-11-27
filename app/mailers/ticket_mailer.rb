@@ -1,5 +1,5 @@
 class TicketMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: ENV["EMAIL"]
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,7 +8,7 @@ class TicketMailer < ActionMailer::Base
   #
 
   def issue_confirmation(ticket)
-    mail to: ticket.email, subject: "We've Received your issue."
+    mail to: ENV["POSTMARK_EMAIL"], subject: "You've got mail."
   end
 end
 

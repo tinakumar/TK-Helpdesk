@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+#gem 'sinatra'
 
 # Use sqlite3 as the database for Active Record
 group :development do
@@ -13,6 +14,9 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+gem "ultrahook", "~> 0.1.2"
+gem 'postmark-rails', '~> 0.5.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -44,6 +48,7 @@ group :doc do
 end
 
 gem 'figaro'
+gem 'letter_opener'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
