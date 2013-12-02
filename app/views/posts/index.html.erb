@@ -1,0 +1,24 @@
+<h1>Listing posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Issue</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.subject %></td>
+        <td><%= post.issue %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
