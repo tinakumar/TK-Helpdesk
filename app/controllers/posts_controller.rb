@@ -23,6 +23,7 @@ class PostsController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+    end
   end
 
 
@@ -36,5 +37,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:subject, :issue)
     end
-
 end
