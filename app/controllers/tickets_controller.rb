@@ -28,7 +28,6 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
-        TicketMailer.issue_confirmation(@ticket).deliver
         format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ticket }
       else
@@ -36,6 +35,7 @@ class TicketsController < ApplicationController
         format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
     end
+    TicketMailer.issue_confirmation(@ticket).deliver
   end
 
   # PATCH/PUT /tickets/1
