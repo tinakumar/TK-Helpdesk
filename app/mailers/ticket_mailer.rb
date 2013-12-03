@@ -8,7 +8,7 @@ class TicketMailer < ActionMailer::Base
   #
 
   def issue_confirmation(ticket)
-    mail to: ENV["POSTMARK_EMAIL"], subject: "You've got mail."
+    mail to: ENV["EMAIL"], subject: "You've got mail."
   end
 end
 
