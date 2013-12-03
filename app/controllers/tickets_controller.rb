@@ -34,8 +34,8 @@ class TicketsController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
+       TicketMailer.issue_confirmation(@ticket).deliver
     end
-    TicketMailer.issue_confirmation(@ticket).deliver
   end
 
   # PATCH/PUT /tickets/1
